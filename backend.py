@@ -170,6 +170,11 @@ async def chat(request: ChatRequest):
         ])
 
         return {"response": bot_response}
+    except asyncio.TimeoutError:
+        raise HTTPException(
+            status_code=504, 
+            detail="LLM request timed out. Please try again."
+    )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -185,3 +190,4 @@ async def get_chat_history(user_id: str):
 # Run the FastAPI server
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
