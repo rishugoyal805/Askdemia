@@ -1,7 +1,7 @@
-pip install crewai
-pip install crewai_tools
-pip install load_dotenv
-pip install pymongo
-pip install fastapi 
-pip install openai
-pip install uvicorn
+crewai[google-genai]
+crewai_tools
+python-dotenv
+pymongo
+fastapi
+openai
+uvicorn
