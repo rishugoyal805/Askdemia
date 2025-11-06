@@ -36,7 +36,7 @@ db = client["chatbot"]
 messages_collection = db["message"]
 
 # Initialize LLM with Gemini
-llm = LLM(model="gemini/gemini-1.5-flash", api_key=api_key, verbose=True)
+llm = LLM(model="gemini/gemini-2.5-flash", api_key=api_key, verbose=True)
 # Define AI Agents with improved backstories
 
 chatbot_agent = Agent(
@@ -190,4 +190,5 @@ async def get_chat_history(user_id: str):
 # Run the FastAPI server
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
 
